@@ -17,6 +17,7 @@ def generatePDF(alumno, dni, fecha_inicio, fecha_fin, docente1, docente2):
     packet = io.BytesIO()
     # Fonts with epecific path
     pdfmetrics.registerFont(TTFont('arial','arial.ttf'))
+    pdfmetrics.registerFont(TTFont('arial_bd','arial_bold.ttf'))
 
     c = canvas.Canvas(packet, letter)
 
@@ -26,9 +27,9 @@ def generatePDF(alumno, dni, fecha_inicio, fecha_fin, docente1, docente2):
     c.drawString(176, 325, dni)
 
 
-    c.setFont('arial', 11)
-    c.drawString(322, 225, docente1)
-    c.drawString(293, 214, docente2)
+    c.setFont('arial', 10)
+    c.drawString(324, 226, docente1)
+    c.drawString(294, 214, docente2)
 
     c.setFont('arial', 11)
     c.drawString(106, 188, f"Realizado del {fecha_inicio} al {fecha_fin} en modalidad presencial")
